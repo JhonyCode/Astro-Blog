@@ -7,8 +7,7 @@ import '../styles/blog.css';
 //     title?: string;
 // }
 
-const {title, ...rest} = Astro.props;
-const frontmatter = rest.frontmatter;
+const {title} = Astro.props;
 ---
 
 <html lang="en">
@@ -17,12 +16,12 @@ const frontmatter = rest.frontmatter;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-        <title>{frontmatter.title}</title>
+        <title>{title}</title>
         <ViewTransitions/>
  	</head>
 	<body class="bg-gray-900">
 
-        <a class="bg-gray-900" href="/">Regresar</a>
+        <a id="btn-back" class="bg-gray-900" href="/">Regresar</a>
     <main class="mb-10 max-w-5xl m-auto">
         <slot/>
     </main>
